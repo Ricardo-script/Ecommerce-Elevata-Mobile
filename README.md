@@ -75,6 +75,7 @@ Essa API foi utilizada apenas para fins de demonstração, permitindo implementa
 - TypeScript
 - NativeWind (Tailwind CSS)
 - Axios
+- React Query (TanStack)
 - React Hook Form
 - Zod
 - AsyncStorage
