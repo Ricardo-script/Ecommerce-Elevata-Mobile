@@ -1,3 +1,4 @@
+import "@/src/services/interceptors";
 import {
   Inter_400Regular,
   Inter_500Medium,

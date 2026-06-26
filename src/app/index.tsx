@@ -1,11 +1,5 @@
-import { Text, View } from "react-native";
+import Login from "../features/login/screens/login.view";
 
-export default function Index() {
-  return (
-    <View className="flex-1 bg-white justify-center items-center">
-      <Text className="text-xl font-inter_bold text-green-800">
-        Hello world
-      </Text>
-    </View>
-  );
-}
+const Index = () => <Login />;
+
+export default Index;
