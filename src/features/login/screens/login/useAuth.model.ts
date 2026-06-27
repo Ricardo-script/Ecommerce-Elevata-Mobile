@@ -1,7 +1,7 @@
 import { useAuthStore } from "@/src/shared/stores/auth.store";
+import { saveToken } from "@/src/storage/auth-storage";
 import { useMutation } from "@tanstack/react-query";
-import { saveToken } from "../../../storage/auth-storage";
-import { login } from "../services/auth.service";
+import { login } from "../../services/auth.service";
 
 export const useAuth = () => {
   const setUser = useAuthStore((state) => state.setUser);

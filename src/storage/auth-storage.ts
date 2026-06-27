@@ -2,23 +2,9 @@ import * as SecureStore from "expo-secure-store";
 
 const TOKEN_KEY = "app_token";
 
-const isSecureStoreAvailable = typeof SecureStore?.setItemAsync === "function";
+export const saveToken = (token: string) =>
+  SecureStore.setItemAsync(TOKEN_KEY, token);
 
-export async function saveToken(token: string) {
-  if (isSecureStoreAvailable) {
-    return SecureStore.setItemAsync(TOKEN_KEY, token);
-  }
-}
+export const getToken = () => SecureStore.getItemAsync(TOKEN_KEY);
 
-export async function getToken() {
-  if (isSecureStoreAvailable) {
-    return SecureStore.getItemAsync(TOKEN_KEY);
-  }
-  return null;
-}
-
-export async function removeToken() {
-  if (isSecureStoreAvailable) {
-    return SecureStore.deleteItemAsync(TOKEN_KEY);
-  }
-}
+export const removeToken = () => SecureStore.deleteItemAsync(TOKEN_KEY);

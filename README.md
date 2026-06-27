@@ -65,6 +65,14 @@ https://dummyjson.com/products
 
 Essa API foi utilizada apenas para fins de demonstração, permitindo implementar um fluxo completo de autenticação e listagem de produtos sem a necessidade de desenvolver um servidor próprio.
 
+### Usuários
+
+https://dummyjson.com/users
+
+### Avatar
+
+https://pravatar.cc/
+
 ---
 
 # Tecnologias

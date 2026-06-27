@@ -9,9 +9,12 @@ import {
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { View } from "react-native";
-import { Loading } from "../shared/components/loading";
 
-export const FontProvider = ({ children }: React.PropsWithChildren) => {
+SplashScreen.preventAutoHideAsync().catch(() => {});
+
+type FontProviderProps = React.PropsWithChildren;
+
+export const FontProvider = ({ children }: FontProviderProps) => {
   const [fontsLoaded, fontError] = useFonts({
     Inter_400Regular,
     Inter_500Medium,
@@ -20,20 +23,18 @@ export const FontProvider = ({ children }: React.PropsWithChildren) => {
   });
 
   useEffect(() => {
-    SplashScreen.preventAutoHideAsync().catch(() => {});
-  }, []);
-
-  useEffect(() => {
     if (fontsLoaded || fontError) {
       SplashScreen.hideAsync().catch(() => {});
     }
   }, [fontsLoaded, fontError]);
 
   if (!fontsLoaded && !fontError) {
-    return <Loading />;
+    return null;
   }
 
   return <View style={containerStyle}>{children}</View>;
 };
 
-const containerStyle = { flex: 1 } as const;
+const containerStyle = {
+  flex: 1,
+} as const;

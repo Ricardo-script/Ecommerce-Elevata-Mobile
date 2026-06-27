@@ -1,5 +1,7 @@
 import { useAuthStore } from "@/src/shared/stores/auth.store";
-import { Button, Text, View } from "react-native";
+import { LoginForm } from "../../components/login-form";
+import { LoginHeader } from "../../components/login-header";
+import { Wrapper } from "../../components/wrapper";
 import { useAuth } from "./useAuth.model";
 
 export default function Login() {
@@ -11,10 +13,9 @@ export default function Login() {
   };
 
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text>Tela de Login</Text>
-      <Button title="Login" onPress={handleLogin} />
-      {user && <Text>Usuário: {user?.firstName + " " + user?.lastName}</Text>}
-    </View>
+    <Wrapper>
+      <LoginHeader />
+      <LoginForm />
+    </Wrapper>
   );
 }
