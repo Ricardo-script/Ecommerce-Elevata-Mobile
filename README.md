@@ -65,6 +65,14 @@ https://dummyjson.com/products
 
 Essa API foi utilizada apenas para fins de demonstração, permitindo implementar um fluxo completo de autenticação e listagem de produtos sem a necessidade de desenvolver um servidor próprio.
 
+### Usuários
+
+https://dummyjson.com/users
+
+### Avatar
+
+https://pravatar.cc/
+
 ---
 
 # Tecnologias
@@ -75,6 +83,7 @@ Essa API foi utilizada apenas para fins de demonstração, permitindo implementa
 - TypeScript
 - NativeWind (Tailwind CSS)
 - Axios
+- React Query (TanStack)
 - React Hook Form
 - Zod
 - AsyncStorage
@@ -168,6 +177,26 @@ yarn start
 Em seguida pressione **a** (Android) ou **i** (iOS) no terminal, ou abra a aplicação Development Build instalada no dispositivo.
 
 ---
+
+## 🔐 Autenticação
+
+Para acessar o aplicativo, utilize as seguintes credenciais de demonstração:
+
+| Campo       | Valor        |
+| ----------- | ------------ |
+| **Usuário** | `emilys`     |
+| **Senha**   | `emilyspass` |
+
+Ou, se preferir, utilize o seguinte JSON:
+
+```json
+{
+  "username": "emilys",
+  "password": "emilyspass"
+}
+```
+
+> **Observação:** Este projeto utiliza a API pública **DummyJSON** para fins de demonstração. As credenciais acima são disponibilizadas pela própria API e foram documentadas para facilitar a avaliação e os testes da aplicação. Elas não representam uma conta real nem expõem informações sensíveis.
 
 # Arquitetura
 
