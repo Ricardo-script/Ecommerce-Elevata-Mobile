@@ -1,8 +1,7 @@
-
 # Ecommerce Elevata Mobile
 
- ![Status](https://img.shields.io/badge/project-em%20desenvolvimento-orange)
- 
+![Status](https://img.shields.io/badge/project-em%20desenvolvimento-orange)
+
 🚧 **Status: Em desenvolvimento** 🟠
 
 Este projeto ainda está em fase de desenvolvimento ativo.  
@@ -232,29 +231,33 @@ src/
 ├── app/
 │   ├── _layout.tsx
 │   ├── index.tsx
-│   │
-│   ├── (auth)/
-│   │   ├── _layout.tsx
-│   │   └── login.tsx
-│   │
-│   └── (tabs)/
+│   └── (app)/
 │       ├── _layout.tsx
 │       ├── home.tsx
-│       ├── favorites.tsx
-│       └── profile.tsx
+│       └── success.tsx
 │
-├── assets/
-├── components/
-├── constants/
-├── contexts/
-├── hooks/
-├── models/
+├── config/
+├── features/
+│   ├── auth/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── schemas/
+│   │   ├── screens/
+│   │   ├── services/
+│   │   └── types/
+│   └── shopping/
+│       ├── components/
+│       └── screens/
+├── providers/
 ├── services/
-├── stores/
+├── shared/
+│   ├── components/
+│   ├── stores/
+│   └── types/
+├── storage/
 ├── styles/
-├── types/
-├── utils/
-└── viewmodels/
+└── ...
 ```
 
 ---
@@ -366,17 +369,28 @@ Contém:
 
 ---
 
-## components/
+## features/
 
-Componentes reutilizáveis utilizados em toda a aplicação.
+Organiza o código por domínio da aplicação.
+
+Atualmente contém módulos como:
+
+- auth;
+- shopping.
+
+Cada módulo pode ter sua própria camada de components, hooks, screens, services e types.
+
+---
+
+## shared/
+
+Contém recursos reutilizáveis entre diferentes módulos.
 
 Exemplos:
 
-- Buttons;
-- Inputs;
-- Cards;
-- Headers;
-- Product Card.
+- componentes compartilhados;
+- stores globais;
+- tipos comuns.
 
 ---
 
@@ -388,53 +402,27 @@ Contém a configuração do Axios e os serviços responsáveis pelo consumo dos 
 
 ---
 
-## viewmodels/
+## providers/
 
-Centraliza toda a lógica de negócio da aplicação.
-
-As telas consomem apenas os estados e funções disponibilizados pelas ViewModels.
+Gerencia provedores globais da aplicação, como contextos e integrações de bibliotecas.
 
 ---
 
-## contexts/
+## storage/
 
-Gerencia estados globais da aplicação.
-
-Exemplos:
-
-- Autenticação;
-- Usuário logado;
-- Favoritos.
+Centraliza a camada de persistência local, como armazenamento de sessão e dados do usuário.
 
 ---
 
-## hooks/
+## config/
 
-Centraliza hooks personalizados reutilizados em diferentes módulos.
-
----
-
-## models/
-
-Representa as entidades da aplicação.
-
----
-
-## utils/
-
-Contém funções utilitárias compartilhadas.
-
----
-
-## constants/
-
-Centraliza constantes utilizadas em todo o projeto.
+Armazena configurações e variáveis de ambiente do projeto.
 
 ---
 
 ## styles/
 
-Arquivos responsáveis pelos estilos compartilhados da aplicação.
+Arquivos responsáveis pelos estilos compartilhados da aplicação, como cores e temas.
 
 ---
 
