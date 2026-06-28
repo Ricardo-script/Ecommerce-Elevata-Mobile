@@ -1,6 +1,9 @@
-# Ecommerce Elevata
+
+# Ecommerce Elevata 
 
 ## Sobre o projeto
+
+<img width="117" height="100" alt="adaptive-icon-removebg-preview" src="https://github.com/user-attachments/assets/834d2180-da27-4b38-9aa4-63a4399b17c8" />
 
 O **Ecommerce Elevata** é um projeto desenvolvido em **React Native** utilizando **Expo**, **Expo Router** e **TypeScript**, com o objetivo de simular o funcionamento de um sistema completo de e-commerce.
 
