@@ -88,7 +88,7 @@ https://dummyjson.com/auth/login
 
 https://dummyjson.com/products
 
-Essa API foi utilizada apenas para fins de demonstração, permitindo implementar um fluxo completo de autenticação e listagem de produtos sem a necessidade de desenvolver um servidor próprio.
+Essa API foi utilizada como parte de um projeto de demonstração técnica, permitindo implementar um fluxo completo de autenticação e listagem de produtos sem a necessidade de desenvolver um servidor próprio.
 
 ### Usuários
 
@@ -216,7 +216,7 @@ Antes de executar o projeto, crie um arquivo chamado .env na raiz do projeto e a
 
 EXPO_PUBLIC_API_URL=https://dummyjson.com
 
-> **Observação:** Este projeto utiliza a API pública DummyJSON, uma API gratuita destinada exclusivamente para testes e demonstrações. Nenhuma credencial, token ou informação sensível é utilizada neste repositório.
+> **Observação:** Este repositório é um projeto de demonstração técnica desenvolvido para apresentar arquitetura, organização de código e boas práticas utilizando React Native, Expo Router e TypeScript. Todas as integrações utilizam APIs públicas destinadas a testes e não expõem informações confidenciais ou credenciais de produção.
 
 ## 🔐 Autenticação
 
@@ -236,7 +236,7 @@ Ou, se preferir, utilize o seguinte JSON:
 }
 ```
 
-> **Observação:** Este projeto utiliza a API pública **DummyJSON** para fins de demonstração. As credenciais acima são disponibilizadas pela própria API e foram documentadas para facilitar a avaliação e os testes da aplicação. Elas não representam uma conta real nem expõem informações sensíveis.
+> **Observação:** Este repositório é um projeto de demonstração técnica desenvolvido para apresentar arquitetura, organização de código e boas práticas utilizando React Native, Expo Router e TypeScript. As credenciais acima são disponibilizadas pela própria API e foram documentadas apenas para facilitar a avaliação e os testes da aplicação, sem expor informações sensíveis.
 
 # Arquitetura
 
@@ -461,24 +461,24 @@ Arquivos responsáveis pelos estilos compartilhados da aplicação, como cores e
 
 # Objetivos do projeto
 
-Este projeto foi desenvolvido com foco em:
+Este projeto tem como objetivo exclusivamente para fins de estudo, demonstração de arquitetura e portfólio, apresentando boas práticas de desenvolvimento utilizando:
 
+- Navegação com Expo Router e arquitetura MVVM;
 - Organização de código;
-- Arquitetura escalável;
 - Separação de responsabilidades;
 - Reutilização de componentes;
-- Navegação com Expo Router;
-- Implementação da arquitetura MVVM;
+- Estrutura modular e escalável;
 - Utilização do NativeWind para estilização;
-- Consumo de APIs REST;
+- Consumo de APIs REST com React Query;
 - Gerenciamento de autenticação;
 - Boas práticas em React Native;
-- Estrutura preparada para evolução do projeto.
+- Persistência local de sessão e estado de aplicação;
+- Experiência de desenvolvimento alinhada a padrões modernos de frontend mobile.
 
 ---
 
 # Considerações finais
 
-O Ecommerce Elevata é um projeto de estudos desenvolvido para demonstrar a construção de uma aplicação moderna utilizando **React Native**, **Expo**, **Expo Router**, **NativeWind** e arquitetura **MVVM**.
+O Ecommerce Elevata é um projeto de demonstração técnica voltado para apresentar uma implementação moderna de um app mobile com React Native, Expo, Expo Router, NativeWind e arquitetura MVVM.
 
-Embora utilize uma API pública para simulação dos dados, toda a estrutura foi planejada para reproduzir a organização encontrada em aplicações reais, código organizado, escalabilidade, manutenção e reutilização de código.
+A proposta é mostrar, de forma prática e organizada, como estruturar um aplicativo com navegação, autenticação, consumo de APIs públicas e boas práticas de desenvolvimento, mantendo o código limpo, modular e preparado para evolução.
