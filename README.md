@@ -192,6 +192,16 @@ Em seguida pressione **a** (Android) ou **i** (iOS) no terminal, ou abra a aplic
 
 ---
 
+Configuração das variáveis de ambiente
+
+Este projeto utiliza variáveis de ambiente para centralizar configurações da aplicação.
+
+Antes de executar o projeto, crie um arquivo chamado .env na raiz do projeto e adicione o seguinte conteúdo:
+
+EXPO_PUBLIC_API_URL=https://dummyjson.com
+
+> **Observação:** Este projeto utiliza a API pública DummyJSON, uma API gratuita destinada exclusivamente para testes e demonstrações. Nenhuma credencial, token ou informação sensível é utilizada neste repositório.
+
 ## 🔐 Autenticação
 
 Para acessar o aplicativo, utilize as seguintes credenciais de demonstração:
