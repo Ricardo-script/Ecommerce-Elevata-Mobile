@@ -2,7 +2,6 @@ import { Button, Input } from "@/src/shared/components";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Octicons from "@expo/vector-icons/Octicons";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Keyboard, View } from "react-native";
 import { FormDataTypes, formSchema } from "../schemas/login.schema";
@@ -11,9 +10,7 @@ import { FeedbackModal } from "./feedback-modal";
 import { ForgotPassword } from "./forgot-password";
 
 export const LoginForm = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [tempLoading, setTempLoading] = useState(false);
-  const { login } = useAuth();
+  const { login, isLoading, isError, reset } = useAuth();
   const {
     handleSubmit,
     control,
@@ -26,17 +23,13 @@ export const LoginForm = () => {
   const onSubmit = (data: FormDataTypes) => {
     Keyboard.dismiss();
     console.log(data);
-    setTempLoading(true);
-    setTimeout(() => {
-      setTempLoading(false);
-      setShowModal(true);
-    }, 3000);
+    login(data);
   };
 
   return (
     <View className="flex-1 gap-4">
       <Input
-        name="email"
+        name="username"
         control={control}
         placeholder="E-mail ou usuário"
         placeholderTextColor="#737687"
@@ -53,15 +46,12 @@ export const LoginForm = () => {
       <ForgotPassword />
       <Button
         title="Entrar"
-        loading={tempLoading}
+        loading={isLoading}
         textLoading="Autenticando..."
         onPress={handleSubmit(onSubmit)}
         disabled={!isValid}
       />
-      <FeedbackModal
-        modalVisible={showModal}
-        onCloseModal={() => setShowModal((prev) => !prev)}
-      />
+      <FeedbackModal modalVisible={isError} onCloseModal={reset} />
     </View>
   );
 };

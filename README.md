@@ -178,6 +178,26 @@ Em seguida pressione **a** (Android) ou **i** (iOS) no terminal, ou abra a aplic
 
 ---
 
+## 🔐 Autenticação
+
+Para acessar o aplicativo, utilize as seguintes credenciais de demonstração:
+
+| Campo       | Valor        |
+| ----------- | ------------ |
+| **Usuário** | `emilys`     |
+| **Senha**   | `emilyspass` |
+
+Ou, se preferir, utilize o seguinte JSON:
+
+```json
+{
+  "username": "emilys",
+  "password": "emilyspass"
+}
+```
+
+> **Observação:** Este projeto utiliza a API pública **DummyJSON** para fins de demonstração. As credenciais acima são disponibilizadas pela própria API e foram documentadas para facilitar a avaliação e os testes da aplicação. Elas não representam uma conta real nem expõem informações sensíveis.
+
 # Arquitetura
 
 O projeto foi estruturado seguindo o padrão arquitetural **MVVM (Model-View-ViewModel)** em conjunto com o **Expo Router**, buscando criar uma aplicação organizada, escalável e de fácil manutenção.

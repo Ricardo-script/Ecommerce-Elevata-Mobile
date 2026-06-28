@@ -1,6 +1,7 @@
 import { useAuthStore } from "@/src/shared/stores/auth.store";
 import { saveToken } from "@/src/storage/auth-storage";
 import { useMutation } from "@tanstack/react-query";
+import { router } from "expo-router";
 import { login } from "../../services/auth.service";
 
 export const useAuth = () => {
@@ -12,6 +13,7 @@ export const useAuth = () => {
       await saveToken(data.accessToken);
       setUser(data);
       console.log({ sucesso: true, data });
+      router.navigate("/success");
     },
     onError: (error) => {
       console.log("Login error:", error);
@@ -23,5 +25,7 @@ export const useAuth = () => {
     isLoading: mutation.isPending,
     data: mutation.data,
     error: mutation.error,
+    isError: mutation.isError,
+    reset: mutation.reset,
   };
 };
