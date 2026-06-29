@@ -1,12 +1,14 @@
 import { Container } from "@/src/shared/components";
-import { Text, View } from "react-native";
+import { InputSearch } from "@/src/shared/components/input-search";
 
 export default function Home() {
+  const handleTeste = (data: string) => {
+    console.log({ check: data });
+  };
+
   return (
     <Container>
-      <View className="flex-1 justify-center items-center">
-        <Text>Home</Text>
-      </View>
+      <InputSearch onSearch={handleTeste} placeholder="Buscar produtos" />
     </Container>
   );
 }

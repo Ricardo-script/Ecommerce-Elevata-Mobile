@@ -10,7 +10,7 @@ type HeaderTitleProps = {
 
 export const HeaderTitle = ({ title }: HeaderTitleProps) => {
   const insets = useSafeAreaInsets();
-  const HEADER_TOP_OFFSET = 2;
+  const HEADER_TOP_OFFSET = 7;
 
   const handleGoBack = () => router.back();
 

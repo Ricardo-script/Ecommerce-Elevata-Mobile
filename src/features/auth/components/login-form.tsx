@@ -22,7 +22,6 @@ export const LoginForm = () => {
 
   const onSubmit = (data: FormDataTypes) => {
     Keyboard.dismiss();
-    console.log(data);
     login(data);
   };
 

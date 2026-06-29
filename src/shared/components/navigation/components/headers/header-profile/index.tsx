@@ -5,12 +5,12 @@ import { MiniCart } from "./mini-cart";
 
 export const Header = () => {
   const insets = useSafeAreaInsets();
-  const HEADER_TOP_OFFSET = 2;
+  const HEADER_TOP_OFFSET = 7;
   const user = useAuthStore((state) => state.user);
 
   return (
     <View
-      className="flex-row justify-between items-center px-6 py-4 bg-white"
+      className="flex-row justify-between items-center px-4 py-4 bg-white"
       style={{
         paddingTop: insets.top + HEADER_TOP_OFFSET,
       }}
