@@ -76,3 +76,84 @@ class CartRepository {
 }
 
 export default new CartRepository();
+
+/**
+ * =============================================================================
+ *                             CART REPOSITORY
+ * =============================================================================
+ *
+ * Guia rápido de utilização do CartRepository.
+ *
+ * Import:
+ *
+ * import cartRepository from "@/database/repositories/CartRepository";
+ *
+ * -----------------------------------------------------------------------------
+ * ➜ Adicionar um produto ao carrinho
+ * -----------------------------------------------------------------------------
+ * Se o produto já existir no carrinho, sua quantidade será incrementada.
+ *
+ * await cartRepository.add({
+ *   productId: product.id,
+ *   title: product.title,
+ *   description: product.description,
+ *   category: product.category,
+ *   price: product.price,
+ *   discountPercentage: product.discountPercentage,
+ *   rating: product.rating,
+ *   stock: product.stock,
+ *   thumbnail: product.thumbnail,
+ *   quantity: 1,
+ * });
+ *
+ * -----------------------------------------------------------------------------
+ * ➜ Buscar um item pelo ID do produto
+ * -----------------------------------------------------------------------------
+ *
+ * const item = await cartRepository.getByProductId(product.id);
+ *
+ * console.log(item);
+ *
+ * -----------------------------------------------------------------------------
+ * ➜ Buscar todos os itens do carrinho
+ * -----------------------------------------------------------------------------
+ * Muito utilizado na tela de carrinho.
+ *
+ * const items = await cartRepository.getAll();
+ *
+ * console.log(items);
+ *
+ * -----------------------------------------------------------------------------
+ * ➜ Atualizar a quantidade de um item
+ * -----------------------------------------------------------------------------
+ * Se a quantidade for menor ou igual a 0, o item será removido do carrinho.
+ *
+ * await cartRepository.updateQuantity(product.id, 3);
+ *
+ * -----------------------------------------------------------------------------
+ * ➜ Remover um item do carrinho
+ * -----------------------------------------------------------------------------
+ *
+ * await cartRepository.remove(product.id);
+ *
+ * -----------------------------------------------------------------------------
+ * ➜ Limpar todo o carrinho
+ * -----------------------------------------------------------------------------
+ *
+ * await cartRepository.clear();
+ *
+ * -----------------------------------------------------------------------------
+ * ➜ Exemplo de uso na tela do Carrinho
+ * -----------------------------------------------------------------------------
+ *
+ * const cartItems = await cartRepository.getAll();
+ *
+ * const total = cartItems.reduce(
+ *   (sum, item) => sum + item.price * item.quantity,
+ *   0
+ * );
+ *
+ * console.log(total);
+ *
+ * =============================================================================
+ */

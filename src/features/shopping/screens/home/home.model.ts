@@ -1,8 +1,9 @@
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { getListCategories } from "../../services/categories.services";
 import { searchProducts } from "../../services/search.services";
 
 export const useHomeModel = () => {
-  const mutation = useMutation({
+  const mutationProducts = useMutation({
     mutationFn: searchProducts,
     onSuccess: async (data) => {
       console.log({ total_de_produtos: data.total, produtos: data.products });
@@ -12,12 +13,19 @@ export const useHomeModel = () => {
     },
   });
 
+  const categoriesQuery = useQuery({
+    queryKey: ["categories"],
+    queryFn: getListCategories,
+  });
+
   const handleSearchProducts = (search: string) => {
-    mutation.mutate(search);
+    mutationProducts.mutate(search);
   };
 
   return {
     searchProducts: handleSearchProducts,
-    isLoading: mutation.isPending,
+    isLoadingProducts: mutationProducts.isPending,
+    categories: categoriesQuery.data ?? [],
+    isLoadingCategories: categoriesQuery.isPending,
   };
 };

@@ -32,50 +32,78 @@ export async function runMigrations() {
 }
 
 /**
- * Executa as migrações do banco de dados.
+ * =============================================================================
+ *                            DATABASE MIGRATIONS
+ * =============================================================================
+ *
+ * Inicializa e mantém a estrutura do banco de dados.
  *
  * Responsabilidades:
- * - Criar as tabelas da aplicação caso ainda não existam;
- * - Executar futuras migrações da estrutura do banco;
- * - Garantir que o banco esteja pronto antes de qualquer operação.
  *
- * Esta função deve ser executada apenas uma vez durante a inicialização
- * da aplicação. Neste projeto isso é feito pelo componente
- * `DatabaseInitializer`, utilizado no arquivo `app/_layout.tsx`
- * (Expo Router).
+ * ✓ Criar as tabelas da aplicação, caso ainda não existam.
+ * ✓ Executar migrações futuras da estrutura do banco.
+ * ✓ Garantir que o banco esteja pronto antes de qualquer operação.
  *
- * @example
+ * -----------------------------------------------------------------------------
+ * ➜ Estrutura do projeto
+ * -----------------------------------------------------------------------------
+ *
+ * app/
+ * └── _layout.tsx
+ *
+ * src/
+ * └── providers/
+ *     └── DatabaseInitializer.tsx
+ *
+ * -----------------------------------------------------------------------------
+ * ➜ Onde é inicializado?
+ * -----------------------------------------------------------------------------
+ *
+ * O componente `DatabaseInitializer` deve envolver a aplicação em
+ * `app/_layout.tsx`, garantindo que as migrações sejam executadas
+ * antes de qualquer acesso ao banco de dados.
+ *
  * // app/_layout.tsx
  *
- *   <DatabaseInitializer>
- *     <Stack screenOptions={{ headerShown: false }} />
- *   </DatabaseInitializer>
+ * <DatabaseInitializer>
+ *   <Stack screenOptions={{ headerShown: false }} />
+ * </DatabaseInitializer>
  *
- * @example
- * // src/providers/
- * DatabaseInitializer.tsx
+ * -----------------------------------------------------------------------------
+ * ➜ Fluxo de inicialização
+ * -----------------------------------------------------------------------------
  *
- * import { PropsWithChildren, useEffect } from "react";
- * import { runMigrations } from "../database/migrations";
+ * app/_layout.tsx
+ *        │
+ *        ▼
+ * DatabaseInitializer
+ *        │
+ *        ▼
+ * runMigrations()
+ *        │
+ *        ▼
+ * Banco pronto para uso
  *
- * export function DatabaseInitializer({
- *   children,
- * }: PropsWithChildren) {
- *   useEffect(() => {
- *     async function initialize() {
- *       try {
- *         await runMigrations();
- *       } catch (error) {
- *         console.error(
- *           "Erro ao inicializar o banco de dados:",
- *           error
- *         );
- *       }
+ * -----------------------------------------------------------------------------
+ * ➜ Implementação
+ * -----------------------------------------------------------------------------
+ *
+ * // src/providers/DatabaseInitializer.tsx
+ *
+ * useEffect(() => {
+ *   async function initialize() {
+ *     try {
+ *       await runMigrations();
+ *     } catch (error) {
+ *       console.error(
+ *         "Erro ao inicializar o banco de dados:",
+ *         error
+ *       );
  *     }
+ *   }
  *
- *     initialize();
- *   }, []);
+ *   initialize();
+ * }, []);
  *
- *   return <>{children}</>;
- * }
+ * =============================================================================
  */

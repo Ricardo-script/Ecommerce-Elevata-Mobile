@@ -1,3 +1,4 @@
+import { colors } from "@/src/styles/colors";
 import Feather from "@expo/vector-icons/Feather";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { router } from "expo-router";
@@ -25,7 +26,7 @@ export const HeaderTitle = ({ title }: HeaderTitleProps) => {
         className="w-10 h-10 items-center justify-center"
         onPress={handleGoBack}
       >
-        <Ionicons name="arrow-back" size={24} color="#191C1D" />
+        <Ionicons name="arrow-back" size={24} color={colors.color_black} />
       </TouchableOpacity>
       <View className="flex-row items-center, gap-3">
         <Text className="text-color_blue font-inter_semibold text-lg">
@@ -33,7 +34,7 @@ export const HeaderTitle = ({ title }: HeaderTitleProps) => {
         </Text>
       </View>
       <TouchableOpacity className="w-10 h-10 items-center justify-center">
-        <Feather name="shopping-bag" size={24} color="#191C1D" />
+        <Feather name="shopping-bag" size={24} color={colors.color_black} />
       </TouchableOpacity>
     </View>
   );

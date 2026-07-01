@@ -3,6 +3,11 @@ import { LinearGradient } from "expo-linear-gradient";
 import { ImageBackground, Text, TouchableOpacity, View } from "react-native";
 
 export const OfferBanner = () => {
+  const navigateToCategorieDresses = () => {
+    const url = "https://dummyjson.com/products/category/womens-dresses";
+    console.log(url);
+  };
+
   return (
     <ImageBackground
       source={banner}
@@ -32,7 +37,10 @@ export const OfferBanner = () => {
         <Text className="text-[#ffffffec] font-inter_regular text-sm">
           Até 50% de desconto em itens selecionados
         </Text>
-        <TouchableOpacity className="bg-white p-2 px-7 rounded-full justify-center items-center self-start top-2">
+        <TouchableOpacity
+          className="bg-white p-2 px-7 rounded-full justify-center items-center self-start top-2"
+          onPress={navigateToCategorieDresses}
+        >
           <Text className=" font-inter_bold text-color_blue">
             Comprar Agora
           </Text>

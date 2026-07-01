@@ -5,13 +5,13 @@ import { OfferBanner } from "../../components/offer-banner";
 import { useHomeModel } from "./home.model";
 
 export default function Home() {
-  const { searchProducts } = useHomeModel();
+  const { searchProducts, categories, isLoadingCategories } = useHomeModel();
 
   return (
     <Container>
       <InputSearch onSearch={searchProducts} placeholder="Buscar produtos" />
       <OfferBanner />
-      <CategoryCarousel />
+      <CategoryCarousel categories={categories} loading={isLoadingCategories} />
     </Container>
   );
 }

@@ -20,7 +20,7 @@ export const Container = ({ children }: ContainerProps) => {
       >
         <ScrollView
           scrollEnabled
-          contentContainerStyle={{ flexGrow: 1 }}
+          contentContainerStyle={{ flexGrow: 0 }}
           automaticallyAdjustKeyboardInsets
           scrollEventThrottle={16}
           keyboardShouldPersistTaps="handled"

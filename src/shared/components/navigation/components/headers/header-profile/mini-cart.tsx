@@ -1,3 +1,4 @@
+import { colors } from "@/src/styles/colors";
 import { Ionicons } from "@expo/vector-icons";
 import { Text, TouchableOpacity, View } from "react-native";
 
@@ -9,7 +10,7 @@ export const MiniCart = () => {
           3
         </Text>
       </View>
-      <Ionicons name="cart-outline" size={27} color="#191C1D" />
+      <Ionicons name="cart-outline" size={27} color={colors.color_black} />
     </TouchableOpacity>
   );
 };
